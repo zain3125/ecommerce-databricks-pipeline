@@ -1,4 +1,4 @@
-from config import RAW_PATH, BRONZE_PATH, TABLES
+from src.config import RAW_PATH, BRONZE_PATH, TABLES
 
 raw_path = RAW_PATH
 bronze_path = BRONZE_PATH
