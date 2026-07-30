@@ -1,7 +1,7 @@
 from pyspark.sql.functions import col, when, row_number
 from pyspark.sql.window import Window
 
-def load_payment_type(spark):
+def load_dim_payment_type(spark):
     # Read silver table
     df = spark.read.table("ecommerce.silver.payments")
 
