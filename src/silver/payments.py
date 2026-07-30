@@ -1,6 +1,6 @@
 from pyspark.sql.functions import current_timestamp, col, lit, when
 
-def transform_payments():
+def transform_payments(spark):
 
     # Read Bronze
     df = spark.read.table("ecommerce.bronze.payments")
@@ -57,5 +57,3 @@ def transform_payments():
         print("✅ payments table loaded successfully")
     except Exception as e:
         print(f"❌ Failed to load payments table: {e}")
-
-transform_payments()

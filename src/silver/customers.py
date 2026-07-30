@@ -1,6 +1,6 @@
 from pyspark.sql.functions import current_timestamp, trim, upper, col, lit
 
-def transform_customers():
+def transform_customers(spark):
 
     # Read Bronze
     df = spark.read.table("ecommerce.bronze.customers")
@@ -27,4 +27,3 @@ def transform_customers():
 
     except Exception as e:
         print(f"❌ Failed to load customers table: {e}")
-transform_customers()

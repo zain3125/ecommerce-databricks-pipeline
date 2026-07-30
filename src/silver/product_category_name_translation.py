@@ -1,6 +1,6 @@
 from pyspark.sql.functions import current_timestamp, col, lit , lower, trim
 
-def transform_product_category_name_translation():
+def transform_product_category_name_translation(spark):
 
     # Read Bronze
     df = spark.read.table("ecommerce.bronze.product_category_name_translation")
@@ -37,5 +37,3 @@ def transform_product_category_name_translation():
         print("✅ product_category_name_translation table loaded successfully")
     except Exception as e:
         print(f"❌ Failed to load product_category_name_translation table: {e}")
-
-transform_product_category_name_translation()

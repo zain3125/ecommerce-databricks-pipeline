@@ -1,6 +1,6 @@
 from pyspark.sql.functions import current_timestamp, col, lit, when, lower, upper, trim
 
-def transform_geolocation():
+def transform_geolocation(spark):
 
     # Read Bronze
     df = spark.read.table("ecommerce.bronze.geolocation")
@@ -54,5 +54,3 @@ def transform_geolocation():
         print("✅ geolocation table loaded successfully")
     except Exception as e:
         print(f"❌ Failed to load geolocation table: {e}")
-
-transform_geolocation()

@@ -1,6 +1,6 @@
 from pyspark.sql.functions import current_timestamp, col, lit, when , to_timestamp, to_date, lower, trim
 
-def transform_reviews():
+def transform_reviews(spark):
 
     # Read Bronze
     df = spark.read.table("ecommerce.bronze.reviews")
@@ -62,5 +62,3 @@ def transform_reviews():
         print("✅ reviews table loaded successfully")
     except Exception as e:
         print(f"❌ Failed to load reviews table: {e}")
-
-transform_reviews()

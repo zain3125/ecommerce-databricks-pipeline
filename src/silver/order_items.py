@@ -1,7 +1,7 @@
 from pyspark.sql.functions import current_timestamp, col, lit, when, lower, trim
 
 
-def transform_order_items():
+def transform_order_items(spark):
 
     # Read Bronze
     df = spark.read.table("ecommerce.bronze.order_items")
@@ -87,5 +87,3 @@ def transform_order_items():
         print("✅ order_items table loaded successfully")
     except Exception as e:
         print(f"❌ Failed to load order_items table: {e}")
-
-transform_order_items()

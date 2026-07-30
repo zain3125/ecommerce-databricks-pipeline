@@ -1,6 +1,6 @@
 from pyspark.sql.functions import current_timestamp, col, lit , lower, trim, when
 
-def transform_products():
+def transform_products(spark):
 
     # Read Bronze
     df = spark.read.table("ecommerce.bronze.products")
@@ -65,5 +65,3 @@ def transform_products():
         print("✅ products table loaded successfully")
     except Exception as e:
         print(f"❌ Failed to load products table: {e}")
-
-transform_products()
