@@ -22,10 +22,10 @@ def load_payment_type(spark):
             df.write
             .format("delta")
             .mode("overwrite")
-            .saveAsTable("ecommerce.gold.payment_type")
+            .saveAsTable("ecommerce.gold.dim_payment_type")
         )
 
-        print(f"✅ payment_type loaded successfully ({df.count()} rows)")
+        print(f"✅ dim_payment_type loaded successfully ({df.count()} rows)")
 
     except Exception as e:
         print(f"❌ Error while writing payment_type: {e}")
